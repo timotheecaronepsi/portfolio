@@ -1,0 +1,194 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{parent()}}Présentation
+{% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('presentation') }}
+{% endblock %}
+{% block body %}
+	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc">Présentation</h1>
+
+	<div class="container mt-5">
+		<p>
+			Bonjour à tous, je suis Timothée CARON, âgé de 19 ans (né le 28/11/2005) et originaire de Saint-Martin-Boulogne (62). 🌟
+		</p>
+
+		<p>
+			L'envie de me lancer dans le domaine du numérique et de l'informatique m'est venue durant mes années de lycée. Les cours de SI (Sciences de l’ingénieur) en première m'ont passionné. Lors du choix des spécialités pour le nouveau Baccalauréat au lycée Eugène-Woillez de Montreuil-sur-Mer (62), j'ai opté pour les Mathématiques, la SI et la Physique-Chimie. À cette époque, je ne savais pas encore précisément quelle école choisir, mais lors de ma journée d’immersion à l’EPSI, l’ambiance et les possibilités offertes m’ont beaucoup plu et ont fini par me convaincre.
+		</p>
+
+		<p>
+			Récemment diplômé de ma première année de BTS SIO option SLAM, je suis actuellement en deuxième année à l'EPSI Arras (62). 💻Passionné par l’univers de l’informatique, je suis une personne engagée, curieuse, persévérante, méthodique et sérieuse. Mon objectif est de devenir développeur informatique, avec l’ambition de progresser vers un poste de chef de projet. Je souhaite me spécialiser dans le développement web et mobile, ainsi que dans la gestion des données, tout en restant ouvert à de nouvelles opportunités pour enrichir mes compétences et relever de nouveaux défis.
+		</p>
+
+		<p>
+			Guidé par la soif de découverte, je poursuis mon parcours, toujours à la recherche de nouvelles expériences et opportunités professionnelles. 🌍
+		</p>
+
+		<!-- Section avec les deux boutons et le texte entre eux -->
+		<div
+			class="row align-items-center mt-5">
+			<!-- Premier bouton centré à gauche -->
+			<div class="col-4 d-flex justify-content-center">
+				<a href="{{ path('app_cv_consulter') }}" target="_blank" class="btn custom-btn">Consulter mon CV</a>
+			</div>
+			<!-- Texte centré entre les boutons -->
+			<div class="col-4 text-center">
+				<p>et / ou</p>
+			</div>
+			<!-- Deuxième bouton centré à droite -->
+			<div class="col-4 d-flex justify-content-center">
+				<a href="{{ path('app_cv_telecharger') }}" class="btn custom-btn">Télécharger mon CV</a>
+			</div>
+		</div>
+
+		<!-- Section avec deux colonnes séparées par une barre verticale -->
+		<div
+			class="row mt-5">
+			<!-- Colonne gauche : Mes formations -->
+			<div class="col-md-5">
+				<h2 class="text-center mt-h2 mb-h2">🎓 Mes Formations</h2>
+				<ul>
+					<li>
+						<strong>EPSI ARRAS / BTS SIO - deuxième année en cours</strong><br>
+						<span>Septembre 2024 - Aujourd’hui (en cours)</li>
+					</li>
+					<li>
+						<strong>EPSI ARRAS / BTS SIO - première année</strong><br>
+						<span>Première année de BTS SIO (SLAM).</li>
+					</li>
+					<li>
+						<strong>Lycée Eugène-Woillez / BAC général</strong><br>
+						<span>Septembre 2020 - Juillet 2022<br>
+							Spécialité : Mathématiques / Sciences de l'ingénierie / Physique-Chimie</li>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Barre verticale entre les colonnes -->
+			<div class="col-md-2 d-flex justify-content-center ">
+				<div class="custom-border col-ver"></div>
+			</div>
+
+			<!-- Colonne droite : Mes expériences professionnelles -->
+			<div class="col-md-5">
+				<h2 class="text-center mt-h2 mb-h2">💼 Mes Expériences Professionnelles</h2>
+				<ul>
+					<li>
+						<strong>Stage première année</strong><br>
+						<span>29/04/2024 au 31/05/2024</li>
+					</li>
+					<li>
+						<strong>Stage deuxième année</strong><br>
+						<span>00/00/2024 au 00/00/2024</li>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="">
+			<h2 class="comp-mt mb-h2">Mes compétences</h2>
+			<ul>
+				<li>
+					<span>Savoir faire</li>
+					<div class="row mt-4">
+						<div class="col-md-6 savoir-faire-mb">
+							<h6 class="text-center fw-bold">Langage de développement</h6>
+							<div class="d-flex flex-wrap justify-content-center mt-3 custom-border-table">
+								<div class="m-2 text-center ">
+									<img src="{{asset ('img/presentation-icon/css.png')}}" alt="Css" class="img-fluid rounded icon-width icon-padding">
+									<p>Css</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/html.png')}}" alt="Html" class="img-fluid rounded icon-width icon-padding">
+									<p>Html</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/javascript.png')}}" alt="JavaScript" class="img-fluid rounded icon-width icon-padding">
+									<p>JavaScript</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/php.png')}}" alt="Php" class="img-fluid rounded icon-width icon-padding">
+									<p>Php</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/python.png')}}" alt="Python" class="img-fluid rounded icon-width icon-padding">
+									<p>Python</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/sql.png')}}" alt="MySql" class="img-fluid rounded icon-width icon-padding">
+									<p>MySql</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/symphony.png')}}" alt="Symphony" class="img-fluid rounded icon-width icon-padding">
+									<p>Symphony</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/twig.png')}}" alt="Twig" class="img-fluid rounded icon-width icon-padding">
+									<p>Twig</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/vsc.png')}}" alt="VsCode" class="img-fluid rounded icon-width icon-padding">
+									<p>Vs Code</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/flask.png')}}" alt="Flask" class="img-fluid rounded icon-width icon-padding">
+									<p>Flask</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6 savoir-faire-mb">
+							<h6 class="text-center fw-bold">Gestion de projet</h6>
+							<div class="d-flex flex-wrap justify-content-center mt-3 custom-border-table">
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/github.png')}}" alt="GitHub" class="img-fluid rounded icon-width icon-padding">
+									<p>GitHub</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/glpi.png')}}" alt="Glpi" class="img-fluid rounded icon-width icon-padding">
+									<p>Glpi</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/trello.png')}}" alt="Trello" class="img-fluid rounded icon-width icon-padding">
+									<p>Trello</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/figma.png')}}" alt="Figma" class="img-fluid rounded icon-width icon-padding">
+									<p>Figma</p>
+								</div>
+								<div class="m-2 text-center">
+									<img src="{{asset ('img/presentation-icon/asana.png')}}" alt="Asana" class="img-fluid rounded icon-width icon-padding">
+									<p>Asana</p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</li>
+				<li>
+					<span>Savoir être</span>
+					<div class="savoir-etre-text">
+						<span>Motivé</span>
+						<span>Discipliné</span>
+						<span>Attentif</span>
+						<span>Curieux</span>
+						<span>Sérieux</span>
+						<span>Créatif</span>
+						<span>Travail d'équipe</span>
+					</div>
+				</li>
+			</li>
+			<li>
+				<span>Langues
+					<div class="langues-text">
+						<span>Anglais (niveau A1)</span>
+						<span>Espagnol (niveau B2)</span>
+					</div>
+				</li>
+			</li>
+		</ul>
+	</div>
+</div></div>{% block javascripts %}
+{{parent()}}
+{{ encore_entry_script_tags('presentation') }}{% endblock %}{% endblock %}

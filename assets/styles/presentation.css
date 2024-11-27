@@ -1,0 +1,83 @@
+.custom-btn {
+    background-color: #1D395F; 
+    color: white; 
+    border: none;
+    margin-bottom: 60px;
+    font-size: 18px;
+}
+
+.custom-btn:hover {
+    background-color: #3576d1;
+    color: white;
+}
+
+.nc {
+    color: #000000;
+}
+
+.custom-border {
+    border-left: 4px solid #000000; 
+    height: 100%;
+}
+
+.mt-h2 {
+    margin-top: 50px;
+}
+
+.mb-h2 {
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 20px; /* Espacement entre les éléments de la liste */
+}
+
+span {
+    display: block; /* Pour forcer le texte de description à être sur une nouvelle ligne */
+    margin-top: 5px; /* Espacement entre le titre et la description */
+    color: #333; /* Couleur du texte de la description */
+    padding-left: 40px;
+}
+
+.col-ver {
+    margin-bottom: 40px;
+}
+
+.comp-mt {
+    margin-top: 100px;
+}
+
+.langues-text {
+    display: flex; 
+    justify-content: space-around; 
+    width: 100%;
+}
+
+.savoir-etre-text {
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.savoir-faire-mb {
+    margin-bottom: 60px;
+}
+
+.icon-width {
+    width: 75px;
+}
+
+.table-bor {
+    border: 1px #000000;
+}
+
+.custom-border-table {
+    border: 2px solid black; 
+    padding: 15px;
+}
+
+.icon-padding {
+    margin-left: 15px;
+    margin-right: 15px;
+}

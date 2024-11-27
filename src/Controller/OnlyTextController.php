@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Routing\Attribute\Route;
 
 class OnlyTextController extends AbstractController
@@ -13,6 +14,29 @@ class OnlyTextController extends AbstractController
     {
         return $this->render('only_text/accueil.html.twig', [
         ]);
+    }
+
+    #[Route('/presentation', name: 'app_presentation')]
+    public function presentation(): Response
+    {
+        return $this->render('only_text/presentation.html.twig', [
+        ]);
+    }
+
+    #[Route('/cv/consulter', name: 'app_cv_consulter')]
+    public function consulterCv(): Response
+    {
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/cv/cv.pdf';
+
+        return $this->file($filePath, 'CV_Timothee_Caron.pdf', ResponseHeaderBag::DISPOSITION_INLINE);
+    }
+
+    #[Route('/cv/telecharger', name: 'app_cv_telecharger')]
+    public function telechargerCv(): Response
+    {
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/cv/cv.pdf';
+
+        return $this->file($filePath, 'CV_Timothee_Caron.pdf');
     }
 
     #[Route('/apropos', name: 'app_a_propos')]

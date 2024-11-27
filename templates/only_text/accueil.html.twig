@@ -1,7 +1,45 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	{{parent()}}Accueil
+	{{ parent() }}Accueil
+{% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('accueil') }}
 {% endblock %}
 {% block body %}
-	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc">PortFolio</h1>
+	<div class="container mt-5">
+		<div
+			class="row align-items-center">
+			<!-- Colonne pour l'image -->
+			<div class="col-md-6 text-center">
+				<img src="{{asset ('img/photo_accueil.jpg')}}" class="img-fluid rounded" alt="Photo_Accueil" style="height: 450px"/>
+			</div>
+
+			<!-- Colonne pour le texte -->
+			<div class="col-md-6">
+				<h5 class="fw-bold text-center">👋 Bonjour à tous, moi c’est Timothée CARON! 👋</h2>
+				<p class="mt-3">
+					À 19 ans, je suis bien installé à Arras, où je poursuis ma passion pour l’informatique en tant qu'étudiant à l’école d’ingénierie informatique à l’EPSI d’Arras. Actuellement je prépare mon BTS SIO, option SLAM, pour me spécialiser dans le développement d’applications et la gestion des systèmes informatiques.
+				</p>
+
+				<p>
+					Mon parcours est encore jeune, mais j’ai déjà hâte de découvrir tout ce que l’informatique a à m’offrir ! Peut-être qu’un jour, mes projets m’emmèneront aux quatre coins de la France, qui sait ? 😄
+				</p>
+
+				<p>
+					Passionné par le monde de l’informatique depuis tout petit, je suis prêt à relever de nouveaux défis et à apprendre toujours plus chaque jour ! 🚀
+				</p>
+
+				<!-- Bouton sous le texte -->
+				<div class="d-flex justify-content-center">
+					<a href="{{path('app_presentation')}}" class="btn custom-btn mt-4">En savoir plus ...</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% block javascripts %}
+		{{parent()}}
+		{{ encore_entry_script_tags('accueil') }}
+	{% endblock %}
 {% endblock %}
