@@ -2,9 +2,18 @@
     background-color: #1D395F; 
     color: white; 
     border: none;
+    font-size: 18px;
 }
 
 .custom-btn:hover {
     background-color: #3576d1;
     color: white;
+}
+
+.text-mt {
+    margin-top: 30px;
+}
+
+.text-mb {
+    margin-bottom: 30px;
 }

@@ -1,0 +1,75 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px; 
+    overflow: hidden;
+    flex-grow: 1; 
+    margin-bottom: 30px; 
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit; 
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #3576d1d4;
+}
+
+.tb {
+    color: #000; 
+}
+
+.title-projet {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.periode-prj {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.titre_prj {
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.description_prj {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom:50px;
+}
+
+.periode-text {
+    font-size: 16px;
+}
+
+.rela-prj {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}

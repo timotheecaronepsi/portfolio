@@ -1,0 +1,83 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px; 
+    overflow: hidden;
+    flex-grow: 1; 
+    margin-bottom: 30px; 
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit; 
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #3576d1d4;
+}
+
+.titre_comp {
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.description_comp {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom:50px;
+}
+
+.text-presentation-comp {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 17px;
+}
+
+.skills-competence {
+    margin: 20px;
+}
+
+.tb {
+    color: #000; /* Noir pur */
+}
+
+.custom-btn {
+    background-color: #1D395F; 
+    color: white; 
+    border: none;
+    margin-bottom: 60px;
+    font-size: 18px;
+}
+
+.custom-btn:hover {
+    background-color: #3576d1;
+    color: white;
+}
+
+.rela-comp {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}

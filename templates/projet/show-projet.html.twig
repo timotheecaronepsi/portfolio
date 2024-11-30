@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{ parent() }}
+	{{ projet.nom }}
+{% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('projet') }}
+{% endblock %}
+{% block body %}
+	<div class="container mt-5">
+		<h2 class="text-center titre_prj tb"><strong>{{ projet.nom }}</strong></h2>
+		<p class="description_prj">{{ projet.description }}</p>
+        <p class="description_prj"><strong class="tb periode-text">Période du projet :</strong> {{ projet.description }}</p>
+		<h5 class="rela-prj tb"><strong>Les compétences relatifs à ce projet</strong></h5>
+		<p>Ce projet applique (nrb.compétences) compétences.</p>
+	</div>
+{% endblock %}

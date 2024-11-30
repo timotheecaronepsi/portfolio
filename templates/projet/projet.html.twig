@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{parent()}}Projets
+{% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('projet') }}
+{% endblock %}
+{% block body %}
+	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc">Projets</h1>
+	<div class="container mt-5">
+		<h5 class="title-projet tb">
+			<strong>Les projets réalisés en première année de BTS SIO (SN1)</strong>
+		</h5>
+		<div class="row mt-4">
+			{% for projet in projetsSN1 %}
+				<div class="col-md-4 mb-4">
+					<a href="{{ path('projet_show', { id: projet.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+						<div class="card-body text-center">
+							<h5 class="card-title tb">{{ projet.nom }}</h5>
+							<h6 class="periode-prj">{{ projet.periode }}</h6>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+
+		<h5 class="title-projet tb">
+			<strong>Les projets réalisés en deuxième année de BTS SIO (SN2)</strong>
+		</h5>
+		{% for projet in projetsSN2 %}
+			<div class="col-md-4 mb-4">
+				<a href="{{ path('projet_show', { id: projet.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+					<div class="card-body text-center">
+						<h5 class="card-title tb">{{ projet.nom }}</h5>
+						<h6 class="periode-prj">{{ projet.periode }}</h6>
+					</div>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

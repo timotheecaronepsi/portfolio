@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{ parent() }}Compétences
+{% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('competence') }}
+{% endblock %}
+{% block body %}
+	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc titre_comp">Compétences</h1>
+
+	<div class="container mt-5">
+		<p class="text-presentation-comp">
+			Étudiant en BTS SIO, j’ai acquis des compétences essentielles en informatique. Ma maîtrise de la gestion du patrimoine informatique, de l’assistance aux utilisateurs, du développement de solutions web, du travail en mode projet, et de la fourniture de services informatiques adaptés sont autant d’atouts que je mets à profit pour contribuer activement au monde numérique. De plus, je m’engage dans une démarche de développement professionnel continu pour renforcer ces compétences.
+		</p>
+
+		<div class="row mt-4">
+			{% for competence in competences %}
+				<div class="col-md-4 mb-4">
+					<a href="{{ path('competence_show', { id: competence.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+						<div class="card-body text-center">
+							<h5 class="card-title tb">{{ competence.nom }}</h5>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+		<!-- Bouton pour la table des compétences -->
+		<div class="row align-items-center mt-5">
+			<div class="d-flex justify-content-center">
+				<a href="" class="btn custom-btn">Télécharger mon tableau de compétences</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

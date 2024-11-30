@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	{{ competence.nom }}
+{% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('competence') }}
+{% endblock %}
+{% block body %}
+	<div class="container mt-5">
+		<h2 class="text-center titre_comp tb"><strong>{{ competence.nom }}</strong></h2>
+		<p class="description_comp">{{ competence.description }}</p>
+		<ul>
+			{% for skill in competence.skills %}
+				<li class="skills-competence tb">{{ skill }}</li>
+			{% endfor %}
+		</ul>
+		<h5 class="rela-comp tb"><strong>Les projets relatifs à cette compétence</strong></h5>
+		<p>Cette compétence a été mise en œuvre dans (nrb.projet) projets.</p>
+	</div>
+{% endblock %}
