@@ -60,16 +60,30 @@
 
 .description_prj {
     font-size: 18px;
-    margin-top: 10px;
-    margin-bottom:50px;
+    line-height: 1.6; 
+    text-align: justify; 
+    margin-bottom: 20px;
 }
 
 .periode-text {
     font-size: 16px;
+    margin-bottom: 50px;
 }
 
 .rela-prj {
     margin-top: 60px;
     margin-bottom: 20px;
     text-decoration: underline;
+}
+
+.project-image {
+    width: 100%; 
+    max-width: 450px;
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-desc {
+    margin-right: 10px;
 }

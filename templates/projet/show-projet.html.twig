@@ -9,10 +9,27 @@
 {% endblock %}
 {% block body %}
 	<div class="container mt-5">
-		<h2 class="text-center titre_prj tb"><strong>{{ projet.nom }}</strong></h2>
-		<p class="description_prj">{{ projet.description }}</p>
-        <p class="description_prj"><strong class="tb periode-text">Période du projet :</strong> {{ projet.description }}</p>
-		<h5 class="rela-prj tb"><strong>Les compétences relatifs à ce projet</strong></h5>
-		<p>Ce projet applique (nrb.compétences) compétences.</p>
-	</div>
-{% endblock %}
+		<h2 class="text-center titre_prj tb">
+			<strong>{{ projet.nom }}</strong>
+		</h2>
+		<div
+			class="row align-items-center mt-4">
+			<div class="col-md-8 pe-4 description_prj">
+				<p class="text-desc">{{ projet.description }}</p>
+			</div>
+
+			<div class="col-md-4 text-center">
+				<img src="{{ asset('img/projet/' ~ (projet.image)) }}" alt="{{ projet.nom }}" class="project-image img-fluid rounded">
+			</div>
+		</div>
+
+		<div class="mt-4 periode-text">
+			<p>
+				<strong class="tb">Période du projet :</strong>
+				{{ projet.periode }}
+			</p>
+		</div>
+		<strong>Les compétences relatifs à ce projet</strong>
+	</h5>
+	<p>Ce projet applique (nrb.compétences) compétences.</p>
+</div>{% endblock %}
