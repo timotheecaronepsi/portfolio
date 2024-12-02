@@ -1,0 +1,106 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px; 
+    overflow: hidden;
+    flex-grow: 1; 
+    margin-bottom: 30px; 
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit; 
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #3576d1d4;
+}
+
+.tb {
+    color: #000; 
+}
+
+.title-stage {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.periode-stage {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.titre_stage {
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.description_stage {
+    font-size: 18px;
+    line-height: 1.6; 
+    text-align: justify; 
+    margin-bottom: 20px;
+}
+
+.periode-text {
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.rela-stage {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.project-image {
+    width: 100%; 
+    max-width: 450px;
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-desc {
+    margin-right: 10px;
+}
+
+.custom-btn {
+    background-color: #1D395F; 
+    color: white; 
+    border: none;
+    margin-bottom: 60px;
+    font-size: 18px;
+}
+
+.custom-btn:hover {
+    background-color: #3576d1;
+    color: white;
+}
+
+.text-eo {
+    margin-top: 8px;
+}

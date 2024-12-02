@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{ parent() }}
+	{{ stage.nom }}
+{% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('stage') }}
+{% endblock %}
+{% block body %}
+	<div class="container mt-5">
+		<h2 class="text-center titre_stage tb">
+			<strong>{{ stage.nom }}</strong>
+		</h2>
+		<div class="row align-items-center mt-4">
+			<div class="col-md-8 pe-4 description_stage">
+				<p class="text-desc">{{ stage.description }}</p>
+			</div>
+
+			<div class="col-md-4 text-center">
+				<img src="{{ asset('img/stage/' ~ (stage.image)) }}" alt="{{ stage.nom }}" class="project-image img-fluid rounded">
+			</div>
+		</div>
+
+		<div class="mt-4 periode-text">
+			<p>
+				<strong class="tb">Période du stage :</strong>
+				{{ stage.periode }}
+			</p>
+		</div>
+
+<!-- Boutons pour consulter et télécharger l'attestation sur la même ligne -->
+		<div class="row mt-5">
+			<!-- Colonne pour le premier bouton -->
+			<div class="col-4 d-flex justify-content-center align-items-center mb-3">
+				<a href="{{ path('app_attestation_consulter', { id: stage.id }) }}" class="btn custom-btn w-100">Consulter mon attestation de stage</a>
+			</div>
+
+			<!-- Colonne pour le texte entre les boutons, aligné en haut -->
+			<div class="col-4 d-flex justify-content-center align-items-start mb-3 text-eo">
+				<p class="m-0">et / ou</p> <!-- Utilisation de m-0 pour enlever les marges par défaut autour du texte -->
+			</div>
+
+			<!-- Colonne pour le deuxième bouton -->
+			<div class="col-4 d-flex justify-content-center align-items-center mb-3">
+				<a href="{{ path('app_attestation_telecharger', { id: stage.id }) }}" class="btn custom-btn w-100">Télécharger mon attestation de stage</a>
+			</div>
+		</div>
+
+		<strong>Les compétences relatifs à ce stage</strong>
+	</h5>
+	<p>Ce stage applique (nrb.compétences) compétences.</p>
+</div>{% endblock %}

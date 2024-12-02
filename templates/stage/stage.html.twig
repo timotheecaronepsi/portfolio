@@ -2,6 +2,47 @@
 {% block title %}
 	{{parent()}}Stages
 {% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('stage') }}
+{% endblock %}
 {% block body %}
 	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc">Stages</h1>
+
+
+
+	<div class="container mt-5">
+		<h5 class="title-stage tb">
+			<strong>Les stages réalisés en première année de BTS SIO (SN1)</strong>
+		</h5>
+		<div class="row mt-4">
+			{% for stage in stagesSN1 %}
+				<div class="col-md-4 mb-4">
+					<a href="{{ path('stage_show', { id: stage.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+						<div class="card-body text-center">
+							<h5 class="card-title tb">{{ stage.nom }}</h5>
+							<h6 class="periode-stage">{{ stage.periode }}</h6>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+
+		<h5 class="title-stage tb">
+			<strong>Les stages réalisés en deuxième année de BTS SIO (SN2)</strong>
+		</h5>
+		{% for stage in stagesSN2 %}
+			<div class="col-md-4 mb-4">
+				<a href="{{ path('stage_show', { id: stage.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+					<div class="card-body text-center">
+						<h5 class="card-title tb">{{ stage.nom }}</h5>
+						<h6 class="periode-stage">{{ stage.periode }}</h6>
+					</div>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+
+
+
 {% endblock %}
