@@ -2,6 +2,10 @@
 {% block title %}
 	{{parent()}}Certifications
 {% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('certification') }}
+{% endblock %}
 {% block body %}
 	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc">Certifications</h1>
 {% endblock %}

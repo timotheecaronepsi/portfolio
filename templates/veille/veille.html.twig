@@ -2,6 +2,10 @@
 {% block title %}
 	{{parent()}}Veille
 {% endblock %}
+{% block stylesheets %}
+	{{parent()}}
+	{{ encore_entry_link_tags('veille') }}
+{% endblock %}
 {% block body %}
 	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc">Veille</h1>
 {% endblock %}
