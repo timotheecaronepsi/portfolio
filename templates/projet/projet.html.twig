@@ -28,15 +28,17 @@
 		<h5 class="title-projet tb">
 			<strong>Les projets réalisés en deuxième année de BTS SIO (SN2)</strong>
 		</h5>
-		{% for projet in projetsSN2 %}
-			<div class="col-md-4 mb-4">
-				<a href="{{ path('projet_show', { id: projet.id }) }}" class="card h-100 shadow-sm text-decoration-none">
-					<div class="card-body text-center">
-						<h5 class="card-title tb">{{ projet.nom }}</h5>
-						<h6 class="periode-prj">{{ projet.periode }}</h6>
-					</div>
-				</a>
-			</div>
-		{% endfor %}
+		<div class="row mt-4">
+			{% for projet in projetsSN2 %}
+				<div class="col-md-4 mb-4">
+					<a href="{{ path('projet_show', { id: projet.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+						<div class="card-body text-center">
+							<h5 class="card-title tb">{{ projet.nom }}</h5>
+							<h6 class="periode-prj">{{ projet.periode }}</h6>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 {% endblock %}

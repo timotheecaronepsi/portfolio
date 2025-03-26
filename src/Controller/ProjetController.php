@@ -13,9 +13,9 @@ class ProjetController extends AbstractController
     #[Route('/projet', name: 'app_projet')]
     public function projet(ProjetRepository $projetRepository): Response
     {
-        $projetsSN1 = $projetRepository->findBy(['id' => range(1, 10)]);
+        $projetsSN1 = $projetRepository->findBy(['id' => range(1, 12)]);
 
-        $projetsSN2 = $projetRepository->findBy(['id' => range(11, 20)]);
+        $projetsSN2 = $projetRepository->findBy(['id' => range(14, 30)]);
 
         return $this->render('projet/projet.html.twig', [
             'projetsSN1' => $projetsSN1,
