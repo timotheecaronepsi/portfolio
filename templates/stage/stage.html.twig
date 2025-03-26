@@ -17,7 +17,7 @@
 		</h5>
 		<div class="row mt-4">
 			{% for stage in stagesSN1 %}
-				<div class="col-md-4 mb-4">
+				<div class="col-12 mb-4">
 					<a href="{{ path('stage_show', { id: stage.id }) }}" class="card h-100 shadow-sm text-decoration-none">
 						<div class="card-body text-center">
 							<h5 class="card-title tb">{{ stage.nom }}</h5>
@@ -32,7 +32,7 @@
 			<strong>Les stages réalisés en deuxième année de BTS SIO (SN2)</strong>
 		</h5>
 		{% for stage in stagesSN2 %}
-			<div class="col-md-4 mb-4">
+			<div class="col-12 mb-4">
 				<a href="{{ path('stage_show', { id: stage.id }) }}" class="card h-100 shadow-sm text-decoration-none">
 					<div class="card-body text-center">
 						<h5 class="card-title tb">{{ stage.nom }}</h5>
