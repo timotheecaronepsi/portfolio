@@ -35,7 +35,7 @@
 			</div>
 			<!-- Texte centré entre les boutons -->
 			<div class="col-4 d-flex justify-content-center align-items-start mb-3 text-eo">
-				<p>et / ou</p>
+				<p class="et_ou">et / ou</p>
 			</div>
 			<!-- Deuxième bouton centré à droite -->
 			<div class="col-4 d-flex justify-content-center align-items-center mb-0 mtbtn">
@@ -96,10 +96,10 @@
 			<h2 class="comp-mt mb-h2">Mes compétences</h2>
 			<ul>
 				<li>
-					<span>Savoir faire</li>
+					<h4 class="title_skill">Savoir faire</h4></li>
 					<div class="row mt-4">
 						<div class="col-md-6 savoir-faire-mb">
-							<h6 class="text-center fw-bold">Langage de développement</h6>
+							<h6 class="title_h6savoirf text-center fw-bold">Langage de développement</h6>
 							<div class="d-flex flex-wrap justify-content-center mt-3 custom-border-table">
 								<div class="m-2 text-center ">
 									<img src="{{asset ('img/presentation-icon/css.png')}}" alt="Css" class="img-fluid rounded icon-width icon-padding">
@@ -135,7 +135,6 @@
 									<p>TypeScript</p>
 								</div>
 
-
 								<div class="m-2 text-center">
 									<img src="{{asset ('img/presentation-icon/python.png')}}" alt="Python" class="img-fluid rounded icon-width icon-padding">
 									<p>Python</p>
@@ -164,7 +163,7 @@
 						</div>
 
 						<div class="col-md-6 savoir-faire-mb">
-							<h6 class="text-center fw-bold">Gestion de projet</h6>
+							<h6 class="title_h6savoirf text-center fw-bold">Gestion de projet</h6>
 							<div class="d-flex flex-wrap justify-content-center mt-3 custom-border-table">
 								<div class="m-2 text-center">
 									<img src="{{asset ('img/presentation-icon/github.png')}}" alt="GitHub" class="img-fluid rounded icon-width icon-padding">
@@ -190,29 +189,39 @@
 						</div>
 					</li>
 				</li>
-				<li>
-					<span>Savoir être</span>
-					<div class="savoir-etre-text">
-						<span>Motivé</span>
-						<span>Discipliné</span>
-						<span>Attentif</span>
-						<span>Curieux</span>
-						<span>Sérieux</span>
-						<span>Créatif</span>
-						<span>Travail d'équipe</span>
+				<div class="row mt-5">
+					<div class="col-md-5">
+						<h4 class="title_skill text-center mt-h2 mb-h2">Savoir être :</h4>
+						<div class="savoir-etre-text">
+							<ul>
+								<li><span>🚀 Motivé</span></li>
+								<li><span>🫡 Discipliné</span></li>
+								<li><span>👀 Attentif</span></li>
+								<li><span>🔍 Curieux</span></li>
+								<li><span>🧐 Sérieux</span></li>
+								<li><span>🎨 Créatif</span></li>
+								<li><span>🤝 Travail d'équipe</span></li>
+							</ul>
+						</div>
 					</div>
-				</li>
-			</li>
-			<li>
-				<span>Langues
-					<div class="langues-text">
-						<span>Anglais (niveau A1)</span>
-						<span>Espagnol (niveau B2)</span>
+
+					<div class="col-md-2 d-flex justify-content-center ">
+						<div class="custom-border col-ver"></div>
 					</div>
-				</li>
+
+
+					<div class="col-md-5">
+						<h4 class="title_skill text-center mt-h2 mb-h2">Langues :</h4>
+						<div>
+							<ul>
+								<li><span>🇬🇧 Anglais (niveau A1)</span></li>
+								<li><span>🇪🇸 Espagnol (niveau B2)</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</li>
 		</ul>
 	</div>
 </div></div>{% block javascripts %}
-{{parent()}}
-{{ encore_entry_script_tags('presentation') }}{% endblock %}{% endblock %}
+{{parent()}}{{ encore_entry_script_tags('presentation') }}{% endblock %}{% endblock %}

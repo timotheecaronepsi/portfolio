@@ -33,10 +33,11 @@ li {
 }
 
 span {
-    display: block; /* Pour forcer le texte de description à être sur une nouvelle ligne */
-    margin-top: 5px; /* Espacement entre le titre et la description */
-    color: #333; /* Couleur du texte de la description */
+    display: block; 
+    margin-top: 5px; 
+    color: #333; 
     padding-left: 40px;
+    font-size: 19px;
 }
 
 .col-ver {
@@ -47,17 +48,8 @@ span {
     margin-top: 100px;
 }
 
-.langues-text {
-    display: flex; 
-    justify-content: space-around; 
-    width: 100%;
-}
-
 .savoir-etre-text {
-    display: flex; 
-    justify-content: space-between; 
-    width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .savoir-faire-mb {
@@ -88,4 +80,20 @@ span {
 
 .mtbtn {
     margin-top: 20px;
+}
+
+.title_skill {
+    margin: 10px 0 25px 45px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 3px;
+}
+
+.et_ou {
+    font-size: 19px;
+}
+
+.title_h6savoirf {
+    margin: 5px;
+    padding: 10px 0 10px 0;
 }
