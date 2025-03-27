@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Stage;
 use App\Repository\StageRepository;
+use App\Repository\CompetenceStageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
@@ -25,10 +26,15 @@ class StageController extends AbstractController
     }
 
     #[Route('/stage/{id}', name: 'stage_show')]
-    public function showstage(Stage $stage): Response
+    public function showstage(Stage $stage, CompetenceStageRepository $competenceStageRepository): Response
     {
+        $competences = $competenceStageRepository->findBy(['Nstages' => $stage]);
+        $totalCompetences = count($competences);
+
         return $this->render('stage/show-stage.html.twig', [
             'stage' => $stage,
+            'competences' => $competences,
+            'totalCompetences' => $totalCompetences,
         ]);
     }
 
