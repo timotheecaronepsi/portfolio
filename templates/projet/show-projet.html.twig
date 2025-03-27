@@ -29,7 +29,28 @@
 				{{ projet.periode }}
 			</p>
 		</div>
-		<strong>Les compétences relatifs à ce projet</strong>
-	</h5>
-	<p>Ce projet applique (nrb.compétences) compétences.</p>
+
+
+<div class="mt-4">
+    <h5 class="titlenbr_competence">Les compétences relatives à ce projet</h5>
+    <p class="texte_nbrprj">Ce projet applique {{ totalCompetences }} compétences :</p>
+
+    {% if totalCompetences > 0 %}
+        <div class="row">
+            {% for competenceProjet in competences %}
+                <div class="col-md-4 mb-4">
+                    <a href="{{ path('competence_show', { id: competenceProjet.NCompetence.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ competenceProjet.NCompetence.nom }}</h5>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Aucune compétence associée à ce projet.</p>
+    {% endif %}
+</div>
+
+
 </div>{% endblock %}

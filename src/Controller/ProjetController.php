@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Projet;
 use App\Repository\ProjetRepository;
+use App\Repository\CompetenceProjetRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -24,10 +25,16 @@ class ProjetController extends AbstractController
     }
 
     #[Route('/projet/{id}', name: 'projet_show')]
-    public function showprojet(Projet $projet): Response
+    public function showprojet(Projet $projet, CompetenceProjetRepository $competenceProjetRepository): Response
     {
+        $competences = $competenceProjetRepository->findBy(['Nprojets' => $projet]);
+
+        $totalCompetences = count($competences);
+
         return $this->render('projet/show-projet.html.twig', [
             'projet' => $projet,
+            'competences' => $competences,
+            'totalCompetences' => $totalCompetences,
         ]);
     }
 }

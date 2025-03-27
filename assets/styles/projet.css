@@ -42,6 +42,13 @@
     color: #000; 
 }
 
+.titlenbr_competence {
+    color: #000; 
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 3px;
+}
+
 .title-projet {
     margin-top: 60px;
     margin-bottom: 20px;
@@ -86,4 +93,11 @@
 
 .text-desc {
     margin-right: 10px;
+}
+
+.texte_nbrprj {
+    font-weight: bold;
+    color: #333;
+    font-family: Arial, sans-serif; 
+    font-size: 19px;
 }
