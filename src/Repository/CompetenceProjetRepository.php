@@ -21,7 +21,7 @@ class CompetenceProjetRepository extends ServiceEntityRepository
     public function countByTotalProjectsByCompetence($competenceId)
     {
         $qb = $this->createQueryBuilder('cp')
-            ->select('COUNT(cp.Nprojets) + COUNT(cs.Nstages) AS totalProjectCount')
+            ->select('COUNT(DISTINCT cp.Nprojets) + COUNT(DISTINCT cs.Nstages) AS totalProjectCount')
             ->leftJoin(CompetenceStage::class, 'cs', 'WITH', 'cs.Ncompetencesstages = cp.NCompetence')
             ->where('cp.NCompetence = :id')
             ->setParameter('id', $competenceId);

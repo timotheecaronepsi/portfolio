@@ -21,7 +21,34 @@
 		<h5 class="rela-comp tb">
 			<strong>Les projets relatifs à cette compétence</strong>
 		</h5>
-		<p class="texte_nbrprj">Cette compétence a été mise en œuvre dans {{ totalProjectCount }} Projets :
+		<p class="texte_nbrprj">Cette compétence a été mise en œuvre dans
+			{{ totalProjectCount }}
+			Projets :
 		</p>
-	</div>
-{% endblock %}
+
+		<div class="row">
+			{% for competenceProjet in projets %}
+				<div class="col-md-4 mb-4">
+					<a href="{{ path('projet_show', { id: competenceProjet.Nprojets.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+						<div class="card-body text-center">
+							<h5 class="card-title tb">{{ competenceProjet.Nprojets.nom }}</h5>
+							<p class="text-muted">Projet</p>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+
+			{% for competenceStage in stages %}
+				<div class="col-md-4 mb-4">
+					<a href="{{ path('stage_show', { id: competenceStage.Nstages.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+						<div class="card-body text-center">
+							<h5 class="card-title tb">{{ competenceStage.Nstages.nom }}</h5>
+							<p class="text-muted">Stage</p>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+
+
+		</div>
+	{% endblock %}
