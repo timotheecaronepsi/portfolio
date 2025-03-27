@@ -9,14 +9,19 @@
 {% endblock %}
 {% block body %}
 	<div class="container mt-5">
-		<h2 class="text-center titre_comp tb"><strong>{{ competence.nom }}</strong></h2>
+		<h2 class="text-center titre_comp tb">
+			<strong>{{ competence.nom }}</strong>
+		</h2>
 		<p class="description_comp">{{ competence.description }}</p>
 		<ul>
 			{% for skill in competence.skills %}
 				<li class="skills-competence tb">{{ skill }}</li>
 			{% endfor %}
 		</ul>
-		<h5 class="rela-comp tb"><strong>Les projets relatifs à cette compétence</strong></h5>
-		<p>Cette compétence a été mise en œuvre dans (nrb.projet) projets.</p>
+		<h5 class="rela-comp tb">
+			<strong>Les projets relatifs à cette compétence</strong>
+		</h5>
+		<p class="texte_nbrprj">Cette compétence a été mise en œuvre dans {{ totalProjectCount }} Projets :
+		</p>
 	</div>
 {% endblock %}

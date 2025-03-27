@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\StageRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +30,17 @@ class Stage
 
     #[ORM\Column(length: 255)]
     private ?string $attestation = null;
+
+    /**
+     * @var Collection<int, CompetenceStage>
+     */
+    #[ORM\OneToMany(targetEntity: CompetenceStage::class, mappedBy: 'Nstages')]
+    private Collection $competenceStages;
+
+    public function __construct()
+    {
+        $this->competenceStages = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,6 +103,36 @@ class Stage
     public function setAttestation(string $attestation): static
     {
         $this->attestation = $attestation;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, CompetenceStage>
+     */
+    public function getCompetenceStages(): Collection
+    {
+        return $this->competenceStages;
+    }
+
+    public function addCompetenceStage(CompetenceStage $competenceStage): static
+    {
+        if (!$this->competenceStages->contains($competenceStage)) {
+            $this->competenceStages->add($competenceStage);
+            $competenceStage->setNstages($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCompetenceStage(CompetenceStage $competenceStage): static
+    {
+        if ($this->competenceStages->removeElement($competenceStage)) {
+            // set the owning side to null (unless already changed)
+            if ($competenceStage->getNstages() === $this) {
+                $competenceStage->setNstages(null);
+            }
+        }
 
         return $this;
     }
