@@ -1,11 +1,47 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}
-	{{parent()}}Certifications
+	{{ parent() }}Certifications
 {% endblock %}
+
 {% block stylesheets %}
-	{{parent()}}
+	{{ parent() }}
 	{{ encore_entry_link_tags('certification') }}
 {% endblock %}
+
 {% block body %}
 	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc">Certifications</h1>
+
+	<div class="container mt-5">
+		<h5 class="title-certification tb">
+			<strong>Les certifications obtenues</strong>
+		</h5>
+
+		<div class="row mt-4">
+			{% for certification in certifications %}
+				<div class="col-md-4 mb-4">
+					<a href="{{ path('certification_show', { id: certification.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+						<div class="card-body text-center">
+							<!-- Nom -->
+							<h5 class="card-title tb">{{ certification.nom }}</h5>
+
+							<!-- Image -->
+							{% if certification.image %}
+								<img src="{{ asset('img/certification/' ~ certification.image) }}" class="certification-image my-3" alt="{{ certification.nom }}">
+							{% else %}
+								<img src="{{ asset('img/certification/default.png') }}" class="certification-image my-3" alt="Image non disponible">
+							{% endif %}
+
+							<!-- Date -->
+							<h6 class="periode-certification">
+								{{ certification.dateObtention }}
+							</h6>
+						</div>
+					</a>
+				</div>
+			{% else %}
+				<p class="text-center">Aucune certification trouvée.</p>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}

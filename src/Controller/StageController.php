@@ -58,4 +58,46 @@ class StageController extends AbstractController
         return $this->file($filePath, $filename);
     }
 
+
+    #[Route('/rapport/consulter/{id}', name: 'app_rapport_consulter')]
+    public function consulterRapport(int $id, StageRepository $stageRepository): Response
+    {
+        $stage = $stageRepository->find($id);
+        $filename = $stage->getRapport();
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/img/stage/' . $filename;
+
+        return $this->file($filePath, $filename, ResponseHeaderBag::DISPOSITION_INLINE);
+    }
+
+    #[Route('/rapport/telecharger/{id}', name: 'app_rapport_telecharger')]
+    public function telechargerRapport(int $id, StageRepository $stageRepository): Response
+    {
+        $stage = $stageRepository->find($id);
+        $filename = $stage->getRapport();
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/img/stage/' . $filename;
+
+        return $this->file($filePath, $filename);
+    }
+
+    
+    #[Route('/powerpoint/consulter/{id}', name: 'app_powerpoint_consulter')]
+    public function consulterPowerpoint(int $id, StageRepository $stageRepository): Response
+    {
+        $stage = $stageRepository->find($id);
+        $filename = $stage->getPowerpoint();
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/img/stage/' . $filename;
+
+        return $this->file($filePath, $filename, ResponseHeaderBag::DISPOSITION_INLINE);
+    }
+
+    #[Route('/powerpoint/telecharger/{id}', name: 'app_powerpoint_telecharger')]
+    public function telechargerPowerpoint(int $id, StageRepository $stageRepository): Response
+    {
+        $stage = $stageRepository->find($id);
+        $filename = $stage->getPowerpoint();
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/img/stage/' . $filename;
+
+        return $this->file($filePath, $filename);
+    }
+
 }

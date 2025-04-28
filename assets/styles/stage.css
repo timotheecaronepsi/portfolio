@@ -47,6 +47,7 @@
     text-decoration-line: underline;
     text-decoration-style: solid;
     text-decoration-thickness: 3px;
+    margin-top: 10px;
 }
 
 .title-stage {
@@ -99,7 +100,6 @@
     background-color: #1D395F; 
     color: white; 
     border: none;
-    margin-bottom: 60px;
     font-size: 18px;
 }
 
@@ -117,4 +117,32 @@
     color: #333;
     font-family: Arial, sans-serif; 
     font-size: 19px;
+}
+
+.custom-border {
+    width: 4px; 
+    background-color: #000;
+    margin: auto; 
+    height: 540px;
+    min-height: 50px;
+}
+
+.col-ver {
+    margin-bottom: 40px;
+}
+
+.et_ou {
+    font-size: 19px;
+}
+
+.btn-marginbot {
+    margin-bottom: 40px;
+}
+
+.project-image {
+    width: 140%;
+    height: 300px;
+    object-fit: cover; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

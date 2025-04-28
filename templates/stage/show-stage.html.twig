@@ -48,26 +48,98 @@
 			</div>
 		</div>
 
-	<div class="mt-4">
-		<h5 class="titlenbr_stage">Les compétences relatives à ce stage</h5>
-		<p class="textenbr_stage">Ce stage applique {{ totalCompetences }} compétences :</p>
 
-		{% if totalCompetences > 0 %}
-			<div class="row">
-				{% for competenceStage in competences %}
-					<div class="col-md-4 mb-4">
-						<a href="{{ path('competence_show', { id: competenceStage.Ncompetencesstages.id }) }}" class="card h-100 shadow-sm text-decoration-none">
-							<div class="card-body text-center">
-								<h5 class="card-title">{{ competenceStage.Ncompetencesstages.nom }}</h5>
-							</div>
+		<div
+			class="row mt-4 align-items-center">
+			<!-- Image du rapport -->
+			<div class="col-md-5 text-center">
+				<img src="{{ asset('img/stage/' ~ stage.imgRapport) }}" alt="Image Rapport" class="project-image img-fluid rounded">
+
+
+				<div
+					class="d-flex flex-column align-items-center mt-5">
+					<!-- Premier bouton -->
+					<div class="col-12 d-flex justify-content-center align-items-center mb-3">
+						<a href="{{ path('app_rapport_consulter', { id: stage.id }) }}" target="_blank" class="btn custom-btn mtbtn">
+							Consulter mon Rapport
 						</a>
 					</div>
-				{% endfor %}
+
+					<!-- Texte "et/ou" -->
+					<div class="col-12 d-flex justify-content-center align-items-center mb-3 text-eo">
+						<p class="et_ou">et / ou</p>
+					</div>
+
+					<!-- Deuxième bouton -->
+					<div class="col-12 d-flex justify-content-center align-items-center btn-marginbot">
+						<a href="{{ path('app_rapport_telecharger', { id: stage.id }) }}" class="btn custom-btn">
+							Télécharger mon Rapport
+						</a>
+					</div>
+				</div>
+
 			</div>
-		{% else %}
-			<p>Aucune compétence associée à ce stage.</p>
-		{% endif %}
+
+			<!-- Barre de séparation -->
+			<div class="col-md-2 d-flex flex-column align-items-center">
+				<div class="custom-border col-ver"></div>
+			</div>
+
+			<!-- Image du PowerPoint -->
+			<div class="col-md-5 text-center">
+				<img src="{{ asset('img/stage/' ~ stage.imgPowerpoint) }}" alt="Image PowerPoint" class="project-image img-fluid rounded">
+
+
+				<div
+					class="d-flex flex-column align-items-center mt-5">
+					<!-- Premier bouton -->
+					<div class="col-12 d-flex justify-content-center align-items-center mb-3">
+						<a href="{{ path('app_powerpoint_consulter', { id: stage.id }) }}" target="_blank" class="btn custom-btn mtbtn" >
+							Consulter mon PowerPoint
+						</a>
+					</div>
+
+					<!-- Texte "et/ou" -->
+					<div class="col-12 d-flex justify-content-center align-items-center mb-3 text-eo">
+						<p class="et_ou">et / ou</p>
+					</div>
+
+					<!-- Deuxième bouton -->
+					<div class="col-12 d-flex justify-content-center align-items-center btn-marginbot">
+						<a href="{{ path('app_powerpoint_telecharger', { id: stage.id }) }}" class="btn custom-btn">
+							Télécharger mon PowerPoint
+						</a>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+
+		<div class="mt-4">
+			<h5 class="titlenbr_stage">Les compétences relatives à ce stage</h5>
+			<p class="textenbr_stage">Ce stage applique
+				{{ totalCompetences }}
+				compétences :</p>
+
+			{% if totalCompetences > 0 %}
+				<div class="row">
+					{% for competenceStage in competences %}
+						<div class="col-md-4 mb-4">
+							<a href="{{ path('competence_show', { id: competenceStage.Ncompetencesstages.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+								<div class="card-body text-center">
+									<h5 class="card-title">{{ competenceStage.Ncompetencesstages.nom }}</h5>
+								</div>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			{% else %}
+				<p>Aucune compétence associée à ce stage.</p>
+			{% endif %}
+		</div>
+
+
 	</div>
-
-
-</div>{% endblock %}
+{% endblock %}

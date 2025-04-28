@@ -37,6 +37,18 @@ class Stage
     #[ORM\OneToMany(targetEntity: CompetenceStage::class, mappedBy: 'Nstages')]
     private Collection $competenceStages;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $rapport = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $img_rapport = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $powerpoint = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $img_powerpoint = null;
+
     public function __construct()
     {
         $this->competenceStages = new ArrayCollection();
@@ -133,6 +145,54 @@ class Stage
                 $competenceStage->setNstages(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRapport(): ?string
+    {
+        return $this->rapport;
+    }
+
+    public function setRapport(?string $rapport): static
+    {
+        $this->rapport = $rapport;
+
+        return $this;
+    }
+
+    public function getImgRapport(): ?string
+    {
+        return $this->img_rapport;
+    }
+
+    public function setImgRapport(?string $img_rapport): static
+    {
+        $this->img_rapport = $img_rapport;
+
+        return $this;
+    }
+
+    public function getPowerpoint(): ?string
+    {
+        return $this->powerpoint;
+    }
+
+    public function setPowerpoint(?string $powerpoint): static
+    {
+        $this->powerpoint = $powerpoint;
+
+        return $this;
+    }
+
+    public function getImgPowerpoint(): ?string
+    {
+        return $this->img_powerpoint;
+    }
+
+    public function setImgPowerpoint(?string $img_powerpoint): static
+    {
+        $this->img_powerpoint = $img_powerpoint;
 
         return $this;
     }

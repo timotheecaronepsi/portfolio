@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}{{ certification.nom }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('certification') }}
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<!-- Nom de la certification -->
+		<h1 class="text-center mb-4">{{ certification.nom }}</h1>
+
+		<!-- Image de la certification -->
+		{% if certification.image %}
+			<div class="text-center mb-4">
+				<img src="{{ asset('img/certification/' ~ certification.image) }}" alt="{{ certification.nom }}" class="certification-image">
+			</div>
+		{% endif %}
+
+		<!-- Description de la certification -->
+		{% if certification.description %}
+			<p class="text-justify mb-4">{{ certification.description|nl2br }}</p>
+		{% endif %}
+
+		<!-- Date d'obtention et URL -->
+		<div class="d-flex justify-content-between mb-4">
+			<!-- Date d'obtention -->
+			<h4 class="text-muted">{{ certification.dateObtention }}</h4>
+
+			<!-- URL du certificat -->
+			{% if certification.url %}
+				<a href="{{ certification.url }}" class="btn btn-primary" target="_blank">Consulter la plateforme du certificat</a>
+			{% endif %}
+		</div>
+
+		<!-- Bouton pour télécharger le certificat -->
+		{% if certification.certificat %}
+			<a href="{{ asset('files/certificates/' ~ certification.certificat) }}" class="btn btn-success" download="certificat_{{ certification.nom }}.pdf">Télécharger le certificat</a>
+		{% endif %}
+	</div>
+{% endblock %}

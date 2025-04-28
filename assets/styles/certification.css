@@ -1,0 +1,70 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+    overflow: hidden;
+    flex-grow: 1;
+    margin-bottom: 30px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #3576d1d4;
+}
+
+.tb {
+    color: #000;
+}
+
+.title-certification {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.periode-certification {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.certification-image {
+    width: 48%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.img_certif {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

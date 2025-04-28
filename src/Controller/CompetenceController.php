@@ -17,9 +17,7 @@ class CompetenceController extends AbstractController
     {
         $competences = $competenceRepository->findAll();
 
-        return $this->render('competence/competence.html.twig', [
-            'competences' => $competences,
-        ]);
+        return $this->render('competence/competence.html.twig', ['competences' => $competences]);
     }
 
     #[Route('/competence/{id}', name: 'competence_show')]
