@@ -5,6 +5,7 @@
 {% block stylesheets %}
 	{{parent()}}
 	{{ encore_entry_link_tags('veille') }}
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 {% endblock %}
 {% block body %}
 	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc">Veille</h1>
@@ -54,8 +55,32 @@
 			<strong>Approches hybrides :</strong>
 			Collaboration entre ordinateurs classiques et quantiques pour combiner leurs forces.</p>
 	</div>
-	<div class="div_info">
-		<h3 class="titre_info"><strong>La collecte des informations</strong></h3>
+
+
+	<div class="div_outils_utilises">
+		<h3 class="titre_outils text-center">Outils utilisés</h3>
+		<div class="outils-cards">
+			<div class="outil-card">
+				<h4 class="outil-titre">Raindrop</h4>
+				<img src="{{ asset('img/outils/raindrop.jpg') }}" alt="Google Scholar" class="outil-img">
+				<p class="outil-desc">Est un gestionnaire de favoris moderne et polyvalent, conçu pour organiser, sauvegarder et retrouver facilement des contenus web préférés, qu'il s'agisse de pages, vidéos, images ou documents.</p>
+				<a href="https://app.raindrop.io/my/49450771" target="_blank" class="outil-lien">Visiter le site</a>
+			</div>
+
+			<div class="outil-card">
+				<h4 class="outil-titre">Google Alert</h4>
+				<img src="{{ asset('img/outils/google alerts.png') }}" alt="arXiv" class="outil-img">
+				<p class="outil-desc">Est un service de Google qui permet de recevoir des notifications par email lorsque de nouveaux contenus correspondant à des mots-clés spécifiques apparaissent sur le web.</p>
+				<a href=" https://www.google.fr/alerts" target="_blank" class="outil-lien">Visiter le site</a>
+			</div>
+
+			<div class="outil-card">
+				<h4 class="outil-titre">Google NotebookLM</h4>
+				<img src="{{ asset('img/outils/notebookklm.png') }}" alt="Qiskit" class="outil-img">
+				<p class="outil-desc">Est un assistant de recherche et de rédaction propulsé par l’intelligence artificielle, développé par Google Labs. Il est conçu pour aider à synthétiser de grandes quantités d’informations provenant de diverses sources.​</p>
+				<a href="https://notebooklm.google.com" target="_blank" class="outil-lien">Visiter le site</a>
+			</div>
+		</div>
 	</div>
 
 {% endblock %}

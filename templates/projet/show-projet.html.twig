@@ -12,8 +12,7 @@
 		<h2 class="text-center titre_prj tb">
 			<strong>{{ projet.nom }}</strong>
 		</h2>
-		<div
-			class="row align-items-center mt-4">
+		<div class="row align-items-center mt-4">
 			<div class="col-md-8 pe-4 description_prj">
 				<p class="text-desc">{{ projet.description }}</p>
 			</div>
@@ -31,26 +30,45 @@
 		</div>
 
 
-<div class="mt-4">
-    <h5 class="titlenbr_competence">Les compétences relatives à ce projet</h5>
-    <p class="texte_nbrprj">Ce projet applique {{ totalCompetences }} compétences :</p>
+		<div class="mt-4">
+			<h5 class="titlenbr_competence">Les compétences relatives à ce projet</h5>
+			<p class="texte_nbrprj">Ce projet applique
+				{{ totalCompetences }}
+				compétences :</p>
 
-    {% if totalCompetences > 0 %}
-        <div class="row">
-            {% for competenceProjet in competences %}
-                <div class="col-md-4 mb-4">
-                    <a href="{{ path('competence_show', { id: competenceProjet.NCompetence.id }) }}" class="card h-100 shadow-sm text-decoration-none">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">{{ competenceProjet.NCompetence.nom }}</h5>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <p>Aucune compétence associée à ce projet.</p>
-    {% endif %}
-</div>
+			{% if totalCompetences > 0 %}
+				<div class="row">
+					{% for competenceProjet in competences %}
+						<div class="col-md-4 mb-4">
+							<a href="{{ path('competence_show', { id: competenceProjet.NCompetence.id }) }}" class="card h-100 shadow-sm text-decoration-none">
+								<div class="card-body text-center">
+									<h5 class="card-title">{{ competenceProjet.NCompetence.nom }}</h5>
+								</div>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			{% else %}
+				<p>Aucune compétence associée à ce projet.</p>
+			{% endif %}
+		</div>
 
 
-</div>{% endblock %}
+		<h4 class="justification_titre">Justification des compétences relatives à ce projet</h4>
+
+		{% if totalCompetences > 0 %}
+			{% for competenceProjet in competences %}
+				<h5 class="justification_competence_nom">{{ competenceProjet.NCompetence.nom }} :</h5>
+				{% if competenceProjet.justificationText %}
+					<p>{{ competenceProjet.justificationText }}</p>
+				{% endif %}
+				{% if competenceProjet.justificationImg %}
+					<img src="{{ asset('img/justification_img/' ~ competenceProjet.justificationImg) }}" alt="Justification image" class="img-fluid">
+				{% endif %}
+			{% endfor %}
+		{% else %}
+			<p>Aucune justification disponible pour les compétences de ce projet.</p>
+		{% endif %}
+
+	</div>
+{% endblock %}

@@ -7,6 +7,7 @@ use App\Repository\CertificationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 class CertificationController extends AbstractController
 {
@@ -22,5 +23,25 @@ class CertificationController extends AbstractController
     public function showcertification(Certification $certification): Response
     {
         return $this->render('certification/show-certification.html.twig', ['certification' => $certification]);
+    }
+
+    #[Route('/certification/consulter/{id}', name: 'app_certification_consulter')]
+    public function consulterCertification(int $id, CertificationRepository $certificationRepository): Response
+    {
+        $certification = $certificationRepository->find($id);
+        $filename = $certification->getCertificat();
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/img/certification/' . $filename;
+
+        return $this->file($filePath, $filename, ResponseHeaderBag::DISPOSITION_INLINE);
+    }
+
+    #[Route('/certification/telecharger/{id}', name: 'app_certification_telecharger')]
+    public function telechargerCertification(int $id, CertificationRepository $certificationRepository): Response
+    {
+        $certification = $certificationRepository->find($id);
+        $filename = $certification->getCertificat();
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/img/certification/' . $filename;
+
+        return $this->file($filePath, $filename);
     }
 }
