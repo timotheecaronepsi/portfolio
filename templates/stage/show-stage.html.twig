@@ -94,7 +94,7 @@
 					class="d-flex flex-column align-items-center mt-5">
 					<!-- Premier bouton -->
 					<div class="col-12 d-flex justify-content-center align-items-center mb-3">
-						<a href="{{ path('app_powerpoint_consulter', { id: stage.id }) }}" target="_blank" class="btn custom-btn mtbtn" >
+						<a href="{{ path('app_powerpoint_consulter', { id: stage.id }) }}" target="_blank" class="btn custom-btn mtbtn">
 							Consulter mon PowerPoint
 						</a>
 					</div>
@@ -139,6 +139,23 @@
 				<p>Aucune compétence associée à ce stage.</p>
 			{% endif %}
 		</div>
+
+		<h4 class="justification_titre">Justification des compétences relatives à ce projet</h4>
+
+		{% if totalCompetences > 0 %}
+			{% for competenceStage in competences %}
+				<h5 class="justification_competence_nom">{{ competenceStage.Ncompetencesstages.nom }}
+					:</h5>
+				{% if competenceStage.justificationText %}
+					<p>{{ competenceStage.justificationText }}</p>
+				{% endif %}
+				{% if competenceStage.justificationImg %}
+					<img src="{{ asset('img/justification_img/' ~ competenceStage.justificationImg) }}" alt="Justification image" class="img-fluid">
+				{% endif %}
+			{% endfor %}
+		{% else %}
+			<p>Aucune justification disponible pour les compétences de ce stage.</p>
+		{% endif %}
 
 
 	</div>
