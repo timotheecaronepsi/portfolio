@@ -1,7 +1,23 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	{{parent()}}À Propos
+    {{ parent() }}À Propos
 {% endblock %}
+
 {% block body %}
-	<h1 class="text-center mt-4 pt-4 display-1 fw-bold lilita fs-1 nc">À Propos</h1>
+<div class="container mt-5">
+    <h1 class="text-center display-1 fw-bold lilita fs-1 nc mb-5">À Propos</h1>
+    <div class="row align-items-center">
+        <div class="col-md-4 text-center">
+            <img src="{{ asset('img/photo_accueil.jpg') }}" alt="Photo de profil" class="img-fluid rounded-circle" style="max-width: 300px;">
+        </div>
+        <div class="col-md-8">
+            <p class="fs-5">
+                 Bienvenue sur mon portfolio ! Vous y retrouverez mon parcours, mes compétences, mes projets, mes stages, mes certifications, ainsi que ma veille technologique. Ce site a été conçu pour offrir une vue d’ensemble claire et organisée de mon travail dans le domaine du développement web. N’hésitez pas à me contacter pour toute question, collaboration ou demande.
+            </p>
+            <div class="text-center mt-3">
+                <a href="{{ path('app_contact') }}" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.6rem 1.4em; padding-top: 0.5rem; margin-top: 1.2rem;">Contactez-moi</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
